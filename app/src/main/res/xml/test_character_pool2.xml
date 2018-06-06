@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<character_pool>
+    <groupName
+        name="superheroes"
+        />
+    <leader
+        image="leadersuperhero.png"
+        />
+    <background
+        image="city.jpg"
+        />
+    <character
+        name="ch6"
+        gender="male"
+        hairColor="black"
+        eyeColor="brown"
+        shirtColor="red"
+        facialExpression="smiling"
+        misc1="have a beard"
+        misc2="wear glasses"
+        />
+    <character
+        name="ch7"
+        gender="male"
+        hairColor="brown"
+        eyeColor="blue"
+        shirtColor="white"
+        misc1="have a hat"
+        misc2="wear glasses"
+        />
+    <character
+        name="ch8"
+        gender="male"
+        hairColor="blonde"
+        eyeColor="black"
+        shirtColor="blue"
+        facialExpression="smiling"
+        misc1="have a hat"
+        />
+    <character
+        name="ch1"
+        gender="female"
+        hairColor="blonde"
+        eyeColor="blue"
+        shirtColor="red"
+        facialExpression="smiling"
+        misc1="wear glasses"
+        misc2="have a hat"
+        />
+    <character
+        name="ch2"
+        gender="female"
+        hairColor="blonde"
+        eyeColor="brown"
+        shirtColor="green"
+        />
+    <character
+        name="ch3"
+        gender="male"
+        hairColor="black"
+        eyeColor="brown"
+        shirtColor="yellow"
+        facialExpression="smiling"
+        misc1="have a beard"
+        />
+    <character
+        name="ch4"
+        gender="female"
+        hairColor="red"
+        eyeColor="blue"
+        shirtColor="green"
+        facialExpression="smiling"
+        />
+    <character
+        name="ch5"
+        gender="female"
+        hairColor="red"
+        eyeColor="black"
+        shirtColor="yellow"
+        facialExpression="smiling"
+        />
+    <character
+        name="ch6"
+        gender="male"
+        hairColor="black"
+        eyeColor="brown"
+        shirtColor="red"
+        facialExpression="smiling"
+        misc1="have a beard"
+        misc2="wear glasses"
+        />
+    <character
+        name="ch7"
+        gender="male"
+        hairColor="brown"
+        eyeColor="blue"
+        shirtColor="white"
+        misc1="have a hat"
+        misc2="wear glasses"
+        />
+    <character
+        name="ch8"
+        gender="male"
+        hairColor="blonde"
+        eyeColor="black"
+        shirtColor="blue"
+        facialExpression="smiling"
+        misc1="have a hat"
+        />
+    <character
+        name="ch1"
+        gender="female"
+        hairColor="blonde"
+        eyeColor="blue"
+        shirtColor="red"
+        facialExpression="smiling"
+        misc1="wear glasses"
+        misc2="have a hat"
+        />
+    <character
+        name="ch2"
+        gender="female"
+        hairColor="blonde"
+        eyeColor="brown"
+        shirtColor="green"
+        />
+    <character
+        name="ch3"
+        gender="male"
+        hairColor="black"
+        eyeColor="brown"
+        shirtColor="yellow"
+        facialExpression="smiling"
+        misc1="have a beard"
+        />
+    <character
+        name="ch4"
+        gender="female"
+        hairColor="red"
+        eyeColor="blue"
+        shirtColor="green"
+        facialExpression="smiling"
+        />
+    <character
+        name="ch5"
+        gender="female"
+        hairColor="red"
+        eyeColor="black"
+        shirtColor="yellow"
+        facialExpression="smiling"
+        />
+    <character
+        name="ch6"
+        gender="male"
+        hairColor="black"
+        eyeColor="brown"
+        shirtColor="red"
+        facialExpression="smiling"
+        misc1="have a beard"
+        misc2="wear glasses"
+        />
+    <character
+        name="ch7"
+        gender="male"
+        hairColor="brown"
+        eyeColor="blue"
+        shirtColor="white"
+        misc1="have a hat"
+        misc2="wear glasses"
+        />
+    <character
+        name="ch8"
+        gender="male"
+        hairColor="blonde"
+        eyeColor="black"
+        shirtColor="blue"
+        facialExpression="smiling"
+        misc1="have a hat"
+        />
+    <character
+        name="ch1"
+        gender="female"
+        hairColor="blonde"
+        eyeColor="blue"
+        shirtColor="red"
+        facialExpression="smiling"
+        misc1="wear glasses"
+        misc2="have a hat"
+        />
+    <character
+        name="ch2"
+        gender="female"
+        hairColor="blonde"
+        eyeColor="brown"
+        shirtColor="green"
+        />
+    <character
+        name="ch3"
+        gender="male"
+        hairColor="black"
+        eyeColor="brown"
+        shirtColor="yellow"
+        facialExpression="smiling"
+        misc1="have a beard"
+        />
+    <character
+        name="ch4"
+        gender="female"
+        hairColor="red"
+        eyeColor="blue"
+        shirtColor="green"
+        facialExpression="smiling"
+        />
+    <character
+        name="ch5"
+        gender="female"
+        hairColor="red"
+        eyeColor="black"
+        shirtColor="yellow"
+        facialExpression="smiling"
+        />
+
+</character_pool>
