@@ -2,7 +2,7 @@ package com.velen.guesswho.question;
 
 import com.velen.guesswho.characters.CharacterGroup;
 import com.velen.guesswho.features.CharacterFeatures;
-import com.velen.guesswho.features.FeaturesPool;
+import com.velen.guesswho.features.GroupFeaturesPool;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -24,7 +24,7 @@ public class AIQuestionGeneratorTest {
     @Mock
     private CharacterGroup mockGroup;
     @Mock
-    private FeaturesPool mockPool;
+    private GroupFeaturesPool mockPool;
     @Mock
     private CharacterFeatures mockFeatures;
 

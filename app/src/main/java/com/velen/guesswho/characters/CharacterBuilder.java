@@ -3,7 +3,16 @@ package com.velen.guesswho.characters;
 import android.graphics.drawable.Drawable;
 
 import com.velen.guesswho.features.CharacterFeatures;
-import static com.velen.guesswho.question.QuestionMenuChoices.*;
+
+import java.util.List;
+
+import static com.velen.guesswho.question.QuestionMenuChoices.EYE_COLOR;
+import static com.velen.guesswho.question.QuestionMenuChoices.FACIAL_EXPRESSION;
+import static com.velen.guesswho.question.QuestionMenuChoices.GENDER;
+import static com.velen.guesswho.question.QuestionMenuChoices.HAIR_COLOR;
+import static com.velen.guesswho.question.QuestionMenuChoices.MISCELLANEOUS;
+import static com.velen.guesswho.question.QuestionMenuChoices.NAME;
+import static com.velen.guesswho.question.QuestionMenuChoices.SHIRT_COLOR;
 
 /** A builder class used to create a Character.*/
 public class CharacterBuilder {
@@ -28,14 +37,21 @@ public class CharacterBuilder {
     }
 
     /**
-     * Adds a feature to the character.
+     * Adds a simple (non miscellaneous) feature to the character.
      * @param featureType The type of the feature.
      * @param featureValue The feature choice for the type.
      * @return A CharacterBuilder instance, to be used for invoking {@link #buildCharacter()} when done adding features.
      */
-    public CharacterBuilder addFeature(String featureType, String featureValue) {
+    public CharacterBuilder addSimpleFeature(String featureType, String featureValue) {
         if(featureType != null){
-            features.addFeature(featureType, featureValue);
+            features.addSimpleFeature(featureType, featureValue);
+        }
+        return this;
+    }
+
+    public CharacterBuilder addMiscFeaturesList(List<String> miscFeatures) {
+        if(miscFeatures != null) {
+            features.setMiscFeatures(miscFeatures);
         }
         return this;
     }
@@ -45,7 +61,7 @@ public class CharacterBuilder {
      * @return A CharacterBuilder instance.
      */
     public CharacterBuilder setName(String name) {
-        features.addFeature(NAME, name);
+        features.addSimpleFeature(NAME, name);
         return this;
     }
 
@@ -54,7 +70,7 @@ public class CharacterBuilder {
      * @return A CharacterBuilder instance.
      */
     public CharacterBuilder setGender(String gender) {
-        features.addFeature(GENDER, gender);
+        features.addSimpleFeature(GENDER, gender);
         return this;
     }
 
@@ -63,7 +79,7 @@ public class CharacterBuilder {
      * @return A CharacterBuilder instance.
      */
     public CharacterBuilder setHairColor(String hairColor) {
-        features.addFeature(HAIR_COLOR, hairColor);
+        features.addSimpleFeature(HAIR_COLOR, hairColor);
         return this;
     }
 
@@ -72,7 +88,7 @@ public class CharacterBuilder {
      * @return A CharacterBuilder instance.
      */
     public CharacterBuilder setEyeColor(String eyeColor) {
-        features.addFeature(EYE_COLOR, eyeColor);
+        features.addSimpleFeature(EYE_COLOR, eyeColor);
         return this;
     }
 
@@ -81,7 +97,7 @@ public class CharacterBuilder {
      * @return A CharacterBuilder instance.
      */
     public CharacterBuilder setShirtColor(String shirtColor) {
-        features.addFeature(SHIRT_COLOR, shirtColor);
+        features.addSimpleFeature(SHIRT_COLOR, shirtColor);
         return this;
     }
 
@@ -90,7 +106,7 @@ public class CharacterBuilder {
      * @return A CharacterBuilder instance.
      */
     public CharacterBuilder setFacialExpression(String facialExpression) {
-        features.addFeature(FACIAL_EXPRESSION, facialExpression);
+        features.addSimpleFeature(FACIAL_EXPRESSION, facialExpression);
         return this;
     }
 
@@ -99,7 +115,7 @@ public class CharacterBuilder {
      * @return A CharacterBuilder instance.
      */
     public CharacterBuilder setMiscellaneous(String miscellaneous) {
-        features.addFeature(MISCELLANEOUS, miscellaneous);
+        features.addSimpleFeature(MISCELLANEOUS, miscellaneous);
         return this;
     }
 

@@ -1,7 +1,7 @@
 package com.velen.guesswho.question;
 
 import com.velen.guesswho.characters.CharacterGroup;
-import com.velen.guesswho.features.FeaturesPool;
+import com.velen.guesswho.features.GroupFeaturesPool;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,7 +29,7 @@ public class AIQuestionGenerator {
      */
     public Question generateQuestion(CharacterGroup againstGroup, int difficulty) {
         this.difficulty = difficulty > 49? difficulty : 50;
-        FeaturesPool pool = againstGroup.getAllAvailableFeaturesForGroup();
+        GroupFeaturesPool pool = againstGroup.getAllAvailableFeaturesForGroup();
         List<String> allTypes = pool.getAllAvailableFeatureTypes();
         allTypes = shuffle(allTypes);
         for(String currentType : allTypes) {

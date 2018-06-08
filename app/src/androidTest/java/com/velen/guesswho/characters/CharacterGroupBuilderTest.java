@@ -6,7 +6,7 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.velen.guesswho.R;
-import com.velen.guesswho.features.FeaturesPool;
+import com.velen.guesswho.features.GroupFeaturesPool;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -63,7 +63,7 @@ public class CharacterGroupBuilderTest {
     public void shouldImportCorrectFeaturesForGroup() {
         //Setup
         CharacterGroup group = parser.getCharactersInXml(R.xml.test_character_pool);
-        FeaturesPool allFeatures = group.getAllAvailableFeaturesForGroup();
+        GroupFeaturesPool allFeatures = group.getAllAvailableFeaturesForGroup();
         //Test
         String expectedValue = "Orestis";
         String actualValue = allFeatures.getAllAvailableFeaturesFor(NAME).get(0);
@@ -80,14 +80,14 @@ public class CharacterGroupBuilderTest {
     @Test(expected=IndexOutOfBoundsException.class)
     public void shouldNotImportDuplicates() {
         CharacterGroup group = parser.getCharactersInXml(R.xml.test_character_pool);
-        FeaturesPool allFeatures = group.getAllAvailableFeaturesForGroup();
+        GroupFeaturesPool allFeatures = group.getAllAvailableFeaturesForGroup();
         allFeatures.getAllAvailableFeaturesFor(EYE_COLOR).get(1);
     }
 
     @Test
     public void shouldImportDuplicates() {
         CharacterGroup group = parser.getCharactersInXml(R.xml.test_character_pool);
-        FeaturesPool allFeatures = group.getAllAvailableFeaturesForGroup();
+        GroupFeaturesPool allFeatures = group.getAllAvailableFeaturesForGroup();
         allFeatures.getAllAvailableFeaturesIncludingDuplicatesFor(EYE_COLOR).get(1);
     }
 

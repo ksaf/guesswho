@@ -7,22 +7,18 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @RunWith(MockitoJUnitRunner.class)
-public class FeaturesPoolTest {
+public class GroupFeaturesPoolTest {
 
-    private FeaturesPool pool;
+    private GroupFeaturesPool pool;
     @Mock
     private CharacterFeatures mockFeatures;
 
     @Before
     public void setup() {
-        pool = new FeaturesPool();
+        pool = new GroupFeaturesPool();
         setMockFeatures();
     }
 
@@ -38,7 +34,7 @@ public class FeaturesPoolTest {
 
     @Test
     public void shouldCorrectlyAddFirstFeaturesToPool() {
-        pool.addToPool(mockFeatures);
+        pool.addToGroupPool(mockFeatures);
         String expectedValue = "orestis";
         String actualValue = pool.getAllAvailableFeaturesFor("name").get(0);
         Assert.assertEquals(expectedValue, actualValue);
@@ -46,8 +42,8 @@ public class FeaturesPoolTest {
 
     @Test
     public void shouldCorrectlyAddDuplicateFeaturesToPool() {
-        pool.addToPool(mockFeatures);
-        pool.addToPool(mockFeatures);
+        pool.addToGroupPool(mockFeatures);
+        pool.addToGroupPool(mockFeatures);
         String expectedValue = "orestis";
         String actualValue1 = pool.getAllAvailableFeaturesIncludingDuplicatesFor("name").get(0);
         String actualValue2 = pool.getAllAvailableFeaturesIncludingDuplicatesFor("name").get(1);
@@ -67,7 +63,7 @@ public class FeaturesPoolTest {
 
     @Test
     public void shouldCorrectlyRemoveCharacterFeatures() {
-        pool.addToPool(mockFeatures);
+        pool.addToGroupPool(mockFeatures);
         pool.removeFromPool(mockFeatures);
         int expectedValue = 0;
         int actualValue1 = pool.getAllAvailableFeaturesFor("name").size();
@@ -78,8 +74,8 @@ public class FeaturesPoolTest {
 
     @Test
     public void shouldRemoveAFeatureOnceOrTwiceDependingOnDuplicatesAllowed() {
-        pool.addToPool(mockFeatures);
-        pool.addToPool(mockFeatures);
+        pool.addToGroupPool(mockFeatures);
+        pool.addToGroupPool(mockFeatures);
         pool.removeFromPool(mockFeatures);
         int expectedValue1 = 0;
         int expectedValue2 = 1;
@@ -92,21 +88,21 @@ public class FeaturesPoolTest {
 
 
     private void setMockFeatures() {
-        Mockito.when(mockFeatures.getNextFeatureFor("name")).thenReturn("orestis");
-        Mockito.when(mockFeatures.getNextFeatureFor("gender")).thenReturn("male");
-        Mockito.when(mockFeatures.getNextFeatureFor("hairColor")).thenReturn("black");
-        Mockito.when(mockFeatures.getNextFeatureFor("eyeColor")).thenReturn("brown");
-        Mockito.when(mockFeatures.getNextFeatureFor("shirtColor")).thenReturn("black");
-        Mockito.when(mockFeatures.getNextFeatureFor("facialExpression")).thenReturn("is smiling");
-        Mockito.when(mockFeatures.getNextFeatureFor("miscellaneous")).thenReturn("have a hat");
-        List<String> featureTypesList = new ArrayList<>();
-        featureTypesList.add("name");
-        featureTypesList.add("gender");
-        featureTypesList.add("hairColor");
-        featureTypesList.add("eyeColor");
-        featureTypesList.add("shirtColor");
-        featureTypesList.add("facialExpression");
-        featureTypesList.add("miscellaneous");
-        Mockito.when(mockFeatures.getContainedTypes()).thenReturn(featureTypesList);
+//        Mockito.when(mockFeatures.getNextFeatureFor("name")).thenReturn("orestis");
+//        Mockito.when(mockFeatures.getNextFeatureFor("gender")).thenReturn("male");
+//        Mockito.when(mockFeatures.getNextFeatureFor("hairColor")).thenReturn("black");
+//        Mockito.when(mockFeatures.getNextFeatureFor("eyeColor")).thenReturn("brown");
+//        Mockito.when(mockFeatures.getNextFeatureFor("shirtColor")).thenReturn("black");
+//        Mockito.when(mockFeatures.getNextFeatureFor("facialExpression")).thenReturn("is smiling");
+//        Mockito.when(mockFeatures.getNextFeatureFor("miscellaneous")).thenReturn("have a hat");
+//        List<String> featureTypesList = new ArrayList<>();
+//        featureTypesList.add("name");
+//        featureTypesList.add("gender");
+//        featureTypesList.add("hairColor");
+//        featureTypesList.add("eyeColor");
+//        featureTypesList.add("shirtColor");
+//        featureTypesList.add("facialExpression");
+//        featureTypesList.add("miscellaneous");
+//        Mockito.when(mockFeatures.getContainedTypes()).thenReturn(featureTypesList);
     }
 }

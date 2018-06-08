@@ -1,7 +1,7 @@
 {
-  "groupName": "superheroes",
-  "leader": "leadersuperhero.png",
-  "background": "city.jpg",
+  "groupName": "pirates",
+  "leader": "leaderpirate.png",
+  "background": "sea.jpg",
   "characters": [
     {
       "name": "ch1",

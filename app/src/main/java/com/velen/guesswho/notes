@@ -1,7 +1,9 @@
 1. Switch AnimationFactory animations for flipping with something better.
 2. Change TurnManager; We don't need more than two players.
 3. Use Glide library to load images to ImageViews.
-4. Refactor CharacterGroupBuilder's way of parsing xml. Maybe JSON would be better?
-   Also refactor Character's hasFeature method (IMPORTANT).
+//4. Refactor CharacterGroupBuilder's way of parsing xml. Maybe JSON would be better?
+//   Also refactor Character's hasFeature method (IMPORTANT).
 5. Fix question menu size, it currently cuts the top and bottom of some listViews.
    Maybe use an other type of dialog, or resize the xml's in it, probably using Guidelines.
+6. isTheSame in Character can be refactored to use an equals method.
+7. BUG: AI opponent's guess comes from the wrong character list (your own instead of his)

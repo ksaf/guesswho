@@ -9,40 +9,48 @@ import java.util.List;
  */
 public class CharacterFeatures {
 
-    private static int thisTypeIteration = 0;
-    private final List<CharacterFeature> featureGroup = new ArrayList<>();
+    private final List<CharacterFeature> simpleFeatures = new ArrayList<>();
+    private List<String> miscFeatures = new ArrayList<>();
 
     /**
-     * Adds a {@link CharacterFeature} to the character's group of features.
+     * Adds a {@link CharacterFeature} to the character's group of simple (non miscellaneous) features.
      * @param type Type of the feature to add (gender, hair color, ..).
      * @param feature Choice for the feature to add (male, black, ..).
      */
-    public void addFeature(String type, String feature) {
-        featureGroup.add(new CharacterFeature(type, feature));
+    public void addSimpleFeature(String type, String feature) {
+        simpleFeatures.add(new CharacterFeature(type, feature));
     }
 
     /**
-     * Gives the choice the character has for a specific type.
-     * <p>
-     * Getting all the {@link QuestionMenuChoices#MISCELLANEOUS} features the character may have requires multiple CONSECUTIVE
-     * calls of the method, each call giving the next feature.
-     * </p>
-     * <p>
-     * If for example the character has a hat and wears glasses, the first invocation of {@link #getNextFeatureFor(String)}
-     * will return has a hat, and the second will return wears glasses.
-     * </p>
-     * @param type The type of feature you want to check for.
-     * @return The choice for the requested feature, or null if no choice was found for the requested type.
+     * Sets the character's group of miscellaneous features.
+     * @param miscFeatures A list of Strings containing the character's miscellaneous feature (wear glasses, have a hat..).
      */
-    public String getNextFeatureFor(String type) {
-        for(int i = 0; i < featureGroup.size(); i++) {
-            CharacterFeature feature = moveToNextFeature(i, type);
-            if(feature.type().equals(type)) {
-                return feature.actual();
+    public void setMiscFeatures(List<String> miscFeatures) {
+        this.miscFeatures = miscFeatures;
+    }
+
+    public boolean hasFeature(String featureType, String featureChoice) {
+        for(CharacterFeature simpleFeature : simpleFeatures) {
+            if(simpleFeature.is(featureType, featureChoice)) {
+                return true;
+            }
+        }
+        return featureType.equals("miscellaneous") && miscFeatures.contains(featureChoice);
+    }
+
+    public String getFeatureForSimpleType(String type) {
+        for(CharacterFeature simpleFeature : simpleFeatures) {
+            if(simpleFeature.type().equals(type)) {
+                return simpleFeature.actual();
             }
         }
         return null;
     }
+
+    public List<String> getMiscFeatures() {
+        return miscFeatures;
+    }
+
 
     /**
      * @return A list of all the types of features this character has. Multiple types of {@link QuestionMenuChoices#MISCELLANEOUS}
@@ -50,43 +58,13 @@ public class CharacterFeatures {
      */
     public List<String> getContainedTypes() {
         List<String> types = new ArrayList<>();
-        for(CharacterFeature feature : featureGroup) {
+        for(CharacterFeature feature : simpleFeatures) {
             types.add(feature.type());
+        }
+        if(!miscFeatures.isEmpty()) {
+            types.add("miscellaneous");
         }
         return types;
     }
 
-    /**
-     * This method has to be used when getting features a multi-featured type and you want to stop before getting all of them.
-     * <p>
-     *     For example if you a character has 3 miscellaneous features, you call {@link #getNextFeatureFor(String)} for 2 of
-     *     them, then you have to call <b>this</b> to be able to call {@link #getNextFeatureFor(String)} again
-     *     for another type e.x. gender.
-     * </p>
-     */
-    public void resetMultiFeaturedTypesGetting() {
-        thisTypeIteration = 0;
-    }
-
-    private int numberOfTimesTypeAppearsInGroup(String type) {
-        int numberOfMisc = 0;
-        for(CharacterFeature feature : featureGroup) {
-            if(feature.type().equals(type)) {
-                numberOfMisc++;
-            }
-        }
-        return numberOfMisc;
-    }
-
-    private CharacterFeature moveToNextFeature(int indexNow, String type) {
-        CharacterFeature feature = featureGroup.get(indexNow);
-        if(featureGroup.get(indexNow).type().equals(type) && thisTypeIteration < numberOfTimesTypeAppearsInGroup(type)) {
-            feature = featureGroup.get(indexNow + thisTypeIteration);
-            thisTypeIteration++;
-        }
-        if(thisTypeIteration == numberOfTimesTypeAppearsInGroup(type)) {
-            thisTypeIteration = 0;
-        }
-        return feature;
-    }
 }
