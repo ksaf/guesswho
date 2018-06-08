@@ -6,8 +6,15 @@ import android.graphics.drawable.Drawable;
 
 import com.velen.guesswho.assetLoader.AssetLoader;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * A class that uses an XML file to read characters from, and can create a {@link CharacterGroup}
@@ -99,6 +106,82 @@ public class CharacterGroupBuilder {
         Drawable image = AssetLoader.loadDrawableFromAssets(context, imagePath);
         Drawable flippedImage = AssetLoader.loadDrawableFromAssets(context, "characterGroups/flipped.png");
         return builder.setDrawable(image).setFlippedDrawable(flippedImage).buildCharacter();
+    }
+
+
+    /**
+     * @param jsonFile The string of path where the JSON file is located.
+     * @return A CharacterGroup containing all the characters found in the JSON file.
+     */
+    public CharacterGroup getCharactersInJSON(String jsonFile) {
+        String jsonString = loadJSONFromAsset(jsonFile);
+        return parseJSON(jsonString);
+    }
+
+    private String loadJSONFromAsset(String fileName) {
+        String json = null;
+        try {
+            InputStream is = context.getAssets().open(fileName);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+
+    private CharacterGroup parseJSON(String jsonString) {
+        characterGroup = new CharacterGroup();
+        String groupName = "";
+        try {
+            JSONObject jsonObject = new JSONObject(jsonString);
+            groupName = getGroupName(jsonObject);
+            JSONArray allCharactersArray = jsonObject.getJSONArray("characters");
+            for(int i = 0; i < allCharactersArray.length(); i++) {
+                JSONObject characterJSON = (JSONObject) allCharactersArray.get(i);
+                characterGroup.addCharacter(createCharacter(characterJSON, groupName));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return characterGroup;
+    }
+
+    private Character createCharacter(JSONObject characterJSON, String groupName) throws JSONException {
+        CharacterBuilder builder = new CharacterBuilder();
+        String characterName = "";
+
+        Iterator<String> iterator = characterJSON.keys();
+        List<String> miscellaneous = new ArrayList<>();
+        while (iterator.hasNext()) {
+            if(iterator.next().equals("miscellaneous")) {
+                JSONArray miscArray = characterJSON.getJSONArray("miscellaneous");
+                for(int i = 0; i < miscArray.length(); i++) {
+                    miscellaneous.add(miscArray.getString(i));
+                }
+                break;
+            }
+            String attributeName = iterator.next();
+            String attributeValue = characterJSON.getString(attributeName);
+            builder.addFeature(attributeName, attributeValue);
+        }
+
+        String imagePath = "characterGroups/" + groupName + "/characters/" + characterName.toLowerCase().replaceAll(" ", "") + CHARACTER_IMAGE_TYPE;
+        Drawable image = AssetLoader.loadDrawableFromAssets(context, imagePath);
+        Drawable flippedImage = AssetLoader.loadDrawableFromAssets(context, "characterGroups/flipped.png");
+        return builder.setDrawable(image).setFlippedDrawable(flippedImage).buildCharacter();
+    }
+
+    private String getGroupName(JSONObject jsonObject) throws JSONException {
+        return jsonObject.getString("groupName");
+    }
+
+    private String getLeaderImagePath(JSONObject jsonObject) throws JSONException {
+        return jsonObject.getString("leader");
     }
 
 }

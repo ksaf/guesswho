@@ -39,6 +39,12 @@ public class CharacterGroupBuilderTest {
     @After
     public void tearDown() {}
 
+
+    @Test
+    public void testJSONParser() {
+        CharacterGroup group = parser.getCharactersInJSON("test_char_pool.json");
+    }
+
     @Test
     public void shouldHaveThreeMaleCharacters() {
         CharacterGroup group = parser.getCharactersInXml(R.xml.test_character_pool);

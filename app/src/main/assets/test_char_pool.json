@@ -1,0 +1,222 @@
+{
+  "groupName": "superheroes",
+  "leader": "leadersuperhero.png",
+  "characters": [
+    {
+      "name": "ch1",
+      "gender": "female",
+      "hairColor": "blonde",
+      "eyeColor": "blue",
+      "shirtColor": "red",
+      "facialExpression": "smiling",
+      "miscellaneous": ["wear glasses", "have a hat"]
+    },
+    {
+      "name": "ch2",
+      "gender": "female",
+      "hairColor": "blonde",
+      "eyeColor": "brown",
+      "shirtColor": "green",
+      "facialExpression": "",
+      "miscellaneous": []
+    },
+    {
+      "name": "ch3",
+      "gender": "male",
+      "hairColor": "black",
+      "eyeColor": "brown",
+      "shirtColor": "yellow",
+      "facialExpression": "smiling",
+      "miscellaneous": ["have a beard"]
+    },
+    {
+      "name": "ch4",
+      "gender": "female",
+      "hairColor": "red",
+      "eyeColor": "blue",
+      "shirtColor": "green",
+      "facialExpression": "smiling",
+      "miscellaneous": []
+    },
+    {
+      "name": "ch5",
+      "gender": "female",
+      "hairColor": "red",
+      "eyeColor": "black",
+      "shirtColor": "yellow",
+      "facialExpression": "smiling",
+      "miscellaneous": []
+    },
+    {
+      "name": "ch6",
+      "gender": "male",
+      "hairColor": "black",
+      "eyeColor": "brown",
+      "shirtColor": "red",
+      "facialExpression": "smiling",
+      "miscellaneous": ["have a beard", "wear glasses"]
+    },
+    {
+      "name": "ch7",
+      "gender": "male",
+      "hairColor": "brown",
+      "eyeColor": "blue",
+      "shirtColor": "white",
+      "facialExpression": "",
+      "miscellaneous": ["have a hat", "wear glasses"]
+    },
+    {
+      "name": "ch8",
+      "gender": "male",
+      "hairColor": "blonde",
+      "eyeColor": "black",
+      "shirtColor": "blue",
+      "facialExpression": "smiling",
+      "miscellaneous": ["have a hat"]
+    },
+    {
+      "name": "ch1",
+      "gender": "female",
+      "hairColor": "blonde",
+      "eyeColor": "blue",
+      "shirtColor": "red",
+      "facialExpression": "smiling",
+      "miscellaneous": ["wear glasses", "have a hat"]
+    },
+    {
+      "name": "ch2",
+      "gender": "female",
+      "hairColor": "blonde",
+      "eyeColor": "brown",
+      "shirtColor": "green",
+      "facialExpression": "",
+      "miscellaneous": []
+    },
+    {
+      "name": "ch3",
+      "gender": "male",
+      "hairColor": "black",
+      "eyeColor": "brown",
+      "shirtColor": "yellow",
+      "facialExpression": "smiling",
+      "miscellaneous": ["have a beard"]
+    },
+    {
+      "name": "ch4",
+      "gender": "female",
+      "hairColor": "red",
+      "eyeColor": "blue",
+      "shirtColor": "green",
+      "facialExpression": "smiling",
+      "miscellaneous": []
+    },
+    {
+      "name": "ch5",
+      "gender": "female",
+      "hairColor": "red",
+      "eyeColor": "black",
+      "shirtColor": "yellow",
+      "facialExpression": "smiling",
+      "miscellaneous": []
+    },
+    {
+      "name": "ch6",
+      "gender": "male",
+      "hairColor": "black",
+      "eyeColor": "brown",
+      "shirtColor": "red",
+      "facialExpression": "smiling",
+      "miscellaneous": ["have a beard", "wear glasses"]
+    },
+    {
+      "name": "ch7",
+      "gender": "male",
+      "hairColor": "brown",
+      "eyeColor": "blue",
+      "shirtColor": "white",
+      "facialExpression": "",
+      "miscellaneous": ["have a hat", "wear glasses"]
+    },
+    {
+      "name": "ch8",
+      "gender": "male",
+      "hairColor": "blonde",
+      "eyeColor": "black",
+      "shirtColor": "blue",
+      "facialExpression": "smiling",
+      "miscellaneous": ["have a hat"]
+    },
+    {
+      "name": "ch1",
+      "gender": "female",
+      "hairColor": "blonde",
+      "eyeColor": "blue",
+      "shirtColor": "red",
+      "facialExpression": "smiling",
+      "miscellaneous": ["wear glasses", "have a hat"]
+    },
+    {
+      "name": "ch2",
+      "gender": "female",
+      "hairColor": "blonde",
+      "eyeColor": "brown",
+      "shirtColor": "green",
+      "facialExpression": "",
+      "miscellaneous": []
+    },
+    {
+      "name": "ch3",
+      "gender": "male",
+      "hairColor": "black",
+      "eyeColor": "brown",
+      "shirtColor": "yellow",
+      "facialExpression": "smiling",
+      "miscellaneous": ["have a beard"]
+    },
+    {
+      "name": "ch4",
+      "gender": "female",
+      "hairColor": "red",
+      "eyeColor": "blue",
+      "shirtColor": "green",
+      "facialExpression": "smiling",
+      "miscellaneous": []
+    },
+    {
+      "name": "ch5",
+      "gender": "female",
+      "hairColor": "red",
+      "eyeColor": "black",
+      "shirtColor": "yellow",
+      "facialExpression": "smiling",
+      "miscellaneous": []
+    },
+    {
+      "name": "ch6",
+      "gender": "male",
+      "hairColor": "black",
+      "eyeColor": "brown",
+      "shirtColor": "red",
+      "facialExpression": "smiling",
+      "miscellaneous": ["have a beard", "wear glasses"]
+    },
+    {
+      "name": "ch7",
+      "gender": "male",
+      "hairColor": "brown",
+      "eyeColor": "blue",
+      "shirtColor": "white",
+      "facialExpression": "",
+      "miscellaneous": ["have a hat", "wear glasses"]
+    },
+    {
+      "name": "ch8",
+      "gender": "male",
+      "hairColor": "blonde",
+      "eyeColor": "black",
+      "shirtColor": "blue",
+      "facialExpression": "smiling",
+      "miscellaneous": ["have a hat"]
+    }
+  ]
+}
