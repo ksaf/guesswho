@@ -15,14 +15,15 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.*;
+
 /**
  * A class that uses an JSON file to read characters from, and can create a {@link CharacterGroup}
  * with these characters with {@link #getCharactersInJSON(String)}.
  */
 public class CharacterGroupBuilder {
 
-    private final String CHARACTER_IMAGE_TYPE = ".png";
-    private final int MAX_NUMBER_OF_ATTRIBUTES_FOR_EACH_CHAR = 9;
+    private final String CHARACTER_IMAGE_TYPE = PNG_EXTENSION;
     private Context context;
     private CharacterGroup characterGroup;
 
@@ -65,22 +66,22 @@ public class CharacterGroupBuilder {
         String groupName = "";
         try {
             JSONObject jsonObject = new JSONObject(jsonString);
-            groupName = jsonObject.getString("groupName");
+            groupName = jsonObject.getString(GROUP_NAME);
 
             /* Create group's characters list*/
-            JSONArray allCharactersArray = jsonObject.getJSONArray("characters");
+            JSONArray allCharactersArray = jsonObject.getJSONArray(CHARACTERS);
             for(int i = 0; i < allCharactersArray.length(); i++) {
                 JSONObject characterJSON = (JSONObject) allCharactersArray.get(i);
                 characterGroup.addCharacter(createCharacter(characterJSON, groupName));
             }
 
             /* Add leader icon to group*/
-            String leaderIconFile = jsonObject.getString("leader");
-            characterGroup.setGroupLeader(AssetLoader.loadDrawableFromAssets(context, "characterGroups/" + groupName + "/leader/" + leaderIconFile));
+            String leaderIconFile = jsonObject.getString(LEADER);
+            characterGroup.setGroupLeader(AssetLoader.loadDrawableFromAssets(context, CHARACTER_GROUPS_PATH + groupName + LEADER_PATH + leaderIconFile));
 
             /* Add group's background*/
-            String backgroundFile = jsonObject.getString("background");
-            characterGroup.setGroupBackGround(AssetLoader.loadDrawableFromAssets(context, "characterGroups/" + groupName + "/background/" + backgroundFile));
+            String backgroundFile = jsonObject.getString(BACKGROUND);
+            characterGroup.setGroupBackGround(AssetLoader.loadDrawableFromAssets(context, CHARACTER_GROUPS_PATH + groupName + BACKGROUND_PATH + backgroundFile));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -96,8 +97,8 @@ public class CharacterGroupBuilder {
         while (iterator.hasNext()) {
             String attributeName = iterator.next();
             /* Add miscellaneous features*/
-            if(attributeName.startsWith("miscellaneous")) {
-                JSONArray miscArray = characterJSON.getJSONArray("miscellaneous");
+            if(attributeName.startsWith(MISCELLANEOUS)) {
+                JSONArray miscArray = characterJSON.getJSONArray(MISCELLANEOUS);
                 for(int i = 0; i < miscArray.length(); i++) {
                     miscellaneous.add(miscArray.getString(i));
                 }
@@ -106,7 +107,7 @@ public class CharacterGroupBuilder {
             /* Add simple features*/
             String attributeValue = characterJSON.getString(attributeName);
             /* Capture name to help build character's image*/
-            if(attributeName.startsWith("name")) {
+            if(attributeName.startsWith(NAME)) {
                 characterName = attributeValue;
             }
             builder.addSimpleFeature(attributeName, attributeValue);
@@ -114,9 +115,9 @@ public class CharacterGroupBuilder {
 
         builder.addMiscFeaturesList(miscellaneous);
 
-        String imagePath = "characterGroups/" + groupName + "/characters/" + characterName.toLowerCase().replaceAll(" ", "") + CHARACTER_IMAGE_TYPE;
+        String imagePath = CHARACTER_GROUPS_PATH + groupName + CHARACTERS_PATH + characterName.toLowerCase().replaceAll(" ", "") + CHARACTER_IMAGE_TYPE;
         Drawable image = AssetLoader.loadDrawableFromAssets(context, imagePath);
-        Drawable flippedImage = AssetLoader.loadDrawableFromAssets(context, "characterGroups/flipped.png");
+        Drawable flippedImage = AssetLoader.loadDrawableFromAssets(context, CHARACTER_GROUPS_PATH + FLIPPED_FILE + PNG_EXTENSION);
         Character character = builder.setDrawable(image).setFlippedDrawable(flippedImage).buildCharacter();
         return character;
     }

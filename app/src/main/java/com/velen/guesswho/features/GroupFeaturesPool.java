@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.MISCELLANEOUS;
+
 /**
  * This class contains the logic for adding and removing a character's features to a groupPool of all the features of a character group.
  */
@@ -77,15 +79,15 @@ public class GroupFeaturesPool {
                 }
             }
         }
-        if(pool.get("miscellaneous") == null) {
-            pool.put("miscellaneous", new ArrayList<String>());
+        if(pool.get(MISCELLANEOUS) == null) {
+            pool.put(MISCELLANEOUS, new ArrayList<String>());
         }
         if(includeDuplicates) {
-            pool.get("miscellaneous").addAll(characterFeatures.getMiscFeatures());
+            pool.get(MISCELLANEOUS).addAll(characterFeatures.getMiscFeatures());
         } else {
             for(String miscFeature : characterFeatures.getMiscFeatures()) {
-                if(!pool.get("miscellaneous").contains(miscFeature)) {
-                    pool.get("miscellaneous").add(miscFeature);
+                if(!pool.get(MISCELLANEOUS).contains(miscFeature)) {
+                    pool.get(MISCELLANEOUS).add(miscFeature);
                 }
             }
         }
@@ -106,17 +108,17 @@ public class GroupFeaturesPool {
                 }
             }
         }
-        if(poolWithDuplicates.get("miscellaneous") == null) {
-            poolWithDuplicates.put("miscellaneous", new ArrayList<String>());
+        if(poolWithDuplicates.get(MISCELLANEOUS) == null) {
+            poolWithDuplicates.put(MISCELLANEOUS, new ArrayList<String>());
         }
-        if(poolWithoutDuplicates.get("miscellaneous") == null) {
-            poolWithoutDuplicates.put("miscellaneous", new ArrayList<String>());
+        if(poolWithoutDuplicates.get(MISCELLANEOUS) == null) {
+            poolWithoutDuplicates.put(MISCELLANEOUS, new ArrayList<String>());
         }
         for(String miscFeature : characterFeatures.getMiscFeatures()) {
-            if(poolWithDuplicates.get("miscellaneous").contains(miscFeature)) {
-                poolWithDuplicates.get("miscellaneous").remove(miscFeature);
-                if(!poolWithDuplicates.get("miscellaneous").contains(miscFeature)) {
-                    poolWithoutDuplicates.get("miscellaneous").remove(miscFeature);
+            if(poolWithDuplicates.get(MISCELLANEOUS).contains(miscFeature)) {
+                poolWithDuplicates.get(MISCELLANEOUS).remove(miscFeature);
+                if(!poolWithDuplicates.get(MISCELLANEOUS).contains(miscFeature)) {
+                    poolWithoutDuplicates.get(MISCELLANEOUS).remove(miscFeature);
                 }
             }
         }

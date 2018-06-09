@@ -11,6 +11,9 @@ import com.velen.guesswho.player.Player;
 import com.velen.guesswho.question.Question;
 import com.velen.guesswho.gameDialogs.TurnInfoDialog;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.PLAYERS_TURN;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.YOUR_TURN;
+
 public class TurnDisplayState implements GameState {
 
     private Game game;
@@ -24,7 +27,7 @@ public class TurnDisplayState implements GameState {
         final SwitchableDialogDisplayer displayer = new SwitchableDialogDisplayer(playScreenActivity);
         final Player currentPlayer = game.getTurnManager().getCurrentPlayer();
         TurnInfoDialog dialog = new TurnInfoDialog(displayer, game.getTurnManager().getNextPlayer());
-        String textToDisplay = game.getTurnManager().isVsAI() && !(currentPlayer instanceof AIPlayer)? "Your turn!" : currentPlayer.getColor().toUpperCase() + " player's turn!";
+        String textToDisplay = game.getTurnManager().isVsAI() && !(currentPlayer instanceof AIPlayer)? YOUR_TURN : currentPlayer.getColor().toUpperCase() + PLAYERS_TURN;
         View view = dialog.openDialog(textToDisplay);
         Button okButton = (Button) view.findViewById(R.id.okTurnInfoButton);
         okButton.setOnClickListener(new View.OnClickListener() {

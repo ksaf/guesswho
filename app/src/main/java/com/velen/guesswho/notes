@@ -7,3 +7,6 @@
    Maybe use an other type of dialog, or resize the xml's in it, probably using Guidelines.
 6. isTheSame in Character can be refactored to use an equals method.
 7. BUG: AI opponent's guess comes from the wrong character list (your own instead of his)
+8. Put wrappers around game states, character creation, a dialog factory interface and
+   implementation, etc
+9. Review AIQuestionGenerator's generate question method.

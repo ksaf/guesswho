@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
-public class AIQuestionGeneratorTest {
+public class AIQuestionGeneratorImplTest {
 
     private final int NUMBER_OF_CHARACTERS = 4;
 
@@ -39,7 +39,7 @@ public class AIQuestionGeneratorTest {
 
     @Test
     public void shouldGenerateTheBestQuestion() {
-        AIQuestionGenerator generator = new AIQuestionGenerator();
+        AIQuestionGeneratorImpl generator = new AIQuestionGeneratorImpl();
         Question q = generator.generateQuestion(mockGroup, 100);
         String expectedQuestion = "Are your character's eyes black?";
         String actualQuestion = q.getQuestionToDisplay();

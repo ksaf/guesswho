@@ -53,7 +53,7 @@ public class AnswerAnnouncementState implements GameState {
         QuestionDialog questionDialog = new QuestionDialog(displayer, game.getTurnManager().getCurrentPlayer());
         View view = questionDialog.openDialog(question.getQuestionToDisplay());
         Button answerButton = (Button) view.findViewById(R.id.okAnswerButton);
-        answerButton.setText("Answer");
+        answerButton.setText(R.string.ANSWER);
         answerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +61,7 @@ public class AnswerAnnouncementState implements GameState {
                 AnswerGenerator generator = new AnswerGenerator();
                 View view = answerDialog.openDialog(generator.generateLongAnswer(question, game.getTurnManager().getNextPlayer().getChosenCharacter()));
                 Button okButton = (Button) view.findViewById(R.id.okAnswerButton);
-                okButton.setText("Flip!");
+                okButton.setText(R.string.FLIP);
                 okButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -4,6 +4,8 @@ import com.velen.guesswho.question.QuestionMenuChoices;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.MISCELLANEOUS;
+
 /**
  * This class contains all the {@link CharacterFeature} a character has.
  */
@@ -35,7 +37,7 @@ public class CharacterFeatures {
                 return true;
             }
         }
-        return featureType.equals("miscellaneous") && miscFeatures.contains(featureChoice);
+        return featureType.equals(MISCELLANEOUS) && miscFeatures.contains(featureChoice);
     }
 
     public String getFeatureForSimpleType(String type) {
@@ -62,7 +64,7 @@ public class CharacterFeatures {
             types.add(feature.type());
         }
         if(!miscFeatures.isEmpty()) {
-            types.add("miscellaneous");
+            types.add(MISCELLANEOUS);
         }
         return types;
     }

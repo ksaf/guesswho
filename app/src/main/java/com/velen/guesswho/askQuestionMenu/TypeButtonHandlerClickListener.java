@@ -19,6 +19,10 @@ import com.velen.guesswho.question.QuestionBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.PNG_EXTENSION;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.QUESTION_GAP;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.QUESTION_ICONS_PATH;
+
 public class TypeButtonHandlerClickListener implements View.OnClickListener, AnimatedViewHandler {
 
     private static final int ASK_QUESTION_CHOICE_FRAGMENT_XML = R.layout.ask_question_choice_fragment;
@@ -60,14 +64,14 @@ public class TypeButtonHandlerClickListener implements View.OnClickListener, Ani
         List<Button> buttonlist = new ArrayList<>();
 
         TextView questionTV = (TextView) view.findViewById(R.id.questionChoiceHeader);
-        String questionToDisplay = QuestionBuilder.getInstance().getQuestionFirstPart(type) + " ______ ?";
+        String questionToDisplay = QuestionBuilder.getInstance().getQuestionFirstPart(type) + QUESTION_GAP;
         questionTV.setText(questionToDisplay);
 
         for(String choice : characterGroup.getAllAvailableFeaturesForGroup().getAllAvailableFeaturesIfMoreThanOneFor(type)) {
             View eachItemView = activity.getLayoutInflater().inflate(R.layout.ask_question_menu_each_item,null);
 
             ImageView img = (ImageView) eachItemView.findViewById(R.id.ask_question_menu_item_image);
-            img.setImageDrawable(AssetLoader.loadDrawableFromAssets(activity, "questionIcons/" + (type + ".png").toLowerCase()));
+            img.setImageDrawable(AssetLoader.loadDrawableFromAssets(activity, QUESTION_ICONS_PATH + (type + PNG_EXTENSION).toLowerCase()));
 
             Button btn = (Button) eachItemView.findViewById(R.id.ask_question_menu_item_text);
             btn.setText(choice);

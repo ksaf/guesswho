@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.LinearLayout;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.COMICSANS_TYPEFACE_FILE;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.TYPEFACES_PATH;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.TYPEFACE_EXTENSION;
+
 public class SwitchableDialogDisplayer {
 
     private android.view.ViewGroup.LayoutParams alertLayoutParams = null;
@@ -66,7 +70,7 @@ public class SwitchableDialogDisplayer {
     }
 
     public Typeface getComicSans() {
-        return Typeface.createFromAsset(context.getAssets(), "typefaces/comicsans.ttf");
+        return Typeface.createFromAsset(context.getAssets(), TYPEFACES_PATH + COMICSANS_TYPEFACE_FILE + TYPEFACE_EXTENSION);
     }
 
     public void closeMenu() {

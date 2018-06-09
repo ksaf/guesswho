@@ -6,10 +6,11 @@ import android.widget.Button;
 
 import com.velen.guesswho.R;
 import com.velen.guesswho.answer.AnswerGenerator;
-import com.velen.guesswho.gameDialogs.SwitchableDialogDisplayer;
 import com.velen.guesswho.gameDialogs.OpponentQuestionDialog;
+import com.velen.guesswho.gameDialogs.SwitchableDialogDisplayer;
 import com.velen.guesswho.player.Player;
 import com.velen.guesswho.question.AIQuestionGenerator;
+import com.velen.guesswho.question.AIQuestionGeneratorImpl;
 import com.velen.guesswho.question.Question;
 
 public class AIQuestionAnnouncementState implements GameState {
@@ -24,7 +25,7 @@ public class AIQuestionAnnouncementState implements GameState {
     public void initialiseState(AppCompatActivity playScreenActivity) {
         final SwitchableDialogDisplayer displayer = new SwitchableDialogDisplayer(playScreenActivity);
         OpponentQuestionDialog dialog = new OpponentQuestionDialog(displayer, game.getTurnManager().getCurrentPlayer());
-        AIQuestionGenerator questionGenerator = new AIQuestionGenerator();
+        AIQuestionGenerator questionGenerator = new AIQuestionGeneratorImpl();
         Player nextPlayer = game.getTurnManager().getNextPlayer();
         Player currentPlayer = game.getTurnManager().getCurrentPlayer();
         final Question aiQuestion = questionGenerator.generateQuestion(currentPlayer.getCurrentCharacterGroup(), 100);

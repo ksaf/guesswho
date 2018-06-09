@@ -61,7 +61,7 @@ public class AIGuessConfirmationDialog implements AnimationEndListener {
     @Override
     public void atAnimationEnd() {
         if(isGuessCorrect()) {
-            multiButton.setText("Yes");
+            multiButton.setText(R.string.YES);
             multiButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -71,7 +71,7 @@ public class AIGuessConfirmationDialog implements AnimationEndListener {
                 }
             });
         } else {
-            multiButton.setText("No");
+            multiButton.setText(R.string.NO);
             multiButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
