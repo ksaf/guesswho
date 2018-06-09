@@ -1,5 +1,7 @@
 package com.velen.guesswho.question;
 
+import com.velen.guesswho.gameStrings.GameStringLiterals;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,13 +28,13 @@ public class QuestionBuilder {
 
     private QuestionBuilder() {
         typeToString = new HashMap<>();
-        typeToString.put(QuestionMenuChoices.NAME, IS_THE_SPY_NAME);
-        typeToString.put(QuestionMenuChoices.GENDER, IS_THE_SPY);
-        typeToString.put(QuestionMenuChoices.HAIR_COLOR, IS_THE_SPY_HAIR);
-        typeToString.put(QuestionMenuChoices.EYE_COLOR, ARE_THE_SPY_EYES);
-        typeToString.put(QuestionMenuChoices.SHIRT_COLOR, IS_THE_SPY_SHIRT);
-        typeToString.put(QuestionMenuChoices.FACIAL_EXPRESSION, IS_THE_SPY);
-        typeToString.put(QuestionMenuChoices.MISCELLANEOUS, DOES_THE_SPY);
+        typeToString.put(GameStringLiterals.NAME, IS_THE_SPY_NAME);
+        typeToString.put(GameStringLiterals.GENDER, IS_THE_SPY);
+        typeToString.put(GameStringLiterals.HAIR_COLOR, IS_THE_SPY_HAIR);
+        typeToString.put(GameStringLiterals.EYE_COLOR, ARE_THE_SPY_EYES);
+        typeToString.put(GameStringLiterals.SHIRT_COLOR, IS_THE_SPY_SHIRT);
+        typeToString.put(GameStringLiterals.FACIAL_EXPRESSION, IS_THE_SPY);
+        typeToString.put(GameStringLiterals.MISCELLANEOUS, DOES_THE_SPY);
     }
 
     /**

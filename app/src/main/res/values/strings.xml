@@ -8,18 +8,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="select_a_question">Select a question</string>
     <string name="back"><![CDATA[<-- Back]]></string>
-    <string name="YES">Yes</string>
-    <string name="NO">No</string>
-    <string name="PLAYERS_CHARACTER">player\'s character :</string>
-    <string name="YOU_LOST">You lost!</string>
-    <string name="YOUR_CHARACTER">Your character:</string>
-    <string name="YOU_WON">You Won!</string>
-    <string name="PLAYER_WON">player won!</string>
-    <string name="PLAY_AGAIN">Play Again!</string>
-    <string name="EXIT_GAME">Exit Game</string>
-    <string name="ANSWER">Answer</string>
-    <string name="FLIP">Flip!</string>
-    <string name="TAP_THE_COIN">Tap the coin!</string>
-    <string name="FIRST">first!</string>
-    <string name="PLAYS_FIRST">plays first!</string>
+
 </resources>

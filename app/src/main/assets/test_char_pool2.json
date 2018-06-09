@@ -9,7 +9,7 @@
       "hairColor": "blonde",
       "eyeColor": "blue",
       "shirtColor": "red",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["wear glasses", "have a hat"]
     },
     {
@@ -18,7 +18,7 @@
       "hairColor": "blonde",
       "eyeColor": "brown",
       "shirtColor": "green",
-      "facialExpression": "",
+      "facial expression": "expressionless",
       "miscellaneous": []
     },
     {
@@ -27,7 +27,7 @@
       "hairColor": "black",
       "eyeColor": "brown",
       "shirtColor": "yellow",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["have a beard"]
     },
     {
@@ -36,7 +36,7 @@
       "hairColor": "red",
       "eyeColor": "blue",
       "shirtColor": "green",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": []
     },
     {
@@ -45,7 +45,7 @@
       "hairColor": "red",
       "eyeColor": "black",
       "shirtColor": "yellow",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": []
     },
     {
@@ -54,7 +54,7 @@
       "hairColor": "black",
       "eyeColor": "brown",
       "shirtColor": "red",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["have a beard", "wear glasses"]
     },
     {
@@ -63,7 +63,7 @@
       "hairColor": "brown",
       "eyeColor": "blue",
       "shirtColor": "white",
-      "facialExpression": "",
+      "facial expression": "expressionless",
       "miscellaneous": ["have a hat", "wear glasses"]
     },
     {
@@ -72,7 +72,7 @@
       "hairColor": "blonde",
       "eyeColor": "black",
       "shirtColor": "blue",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["have a hat"]
     },
     {
@@ -81,7 +81,7 @@
       "hairColor": "blonde",
       "eyeColor": "blue",
       "shirtColor": "red",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["wear glasses", "have a hat"]
     },
     {
@@ -90,7 +90,7 @@
       "hairColor": "blonde",
       "eyeColor": "brown",
       "shirtColor": "green",
-      "facialExpression": "",
+      "facial expression": "expressionless",
       "miscellaneous": []
     },
     {
@@ -99,7 +99,7 @@
       "hairColor": "black",
       "eyeColor": "brown",
       "shirtColor": "yellow",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["have a beard"]
     },
     {
@@ -108,7 +108,7 @@
       "hairColor": "red",
       "eyeColor": "blue",
       "shirtColor": "green",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": []
     },
     {
@@ -117,7 +117,7 @@
       "hairColor": "red",
       "eyeColor": "black",
       "shirtColor": "yellow",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": []
     },
     {
@@ -126,7 +126,7 @@
       "hairColor": "black",
       "eyeColor": "brown",
       "shirtColor": "red",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["have a beard", "wear glasses"]
     },
     {
@@ -135,7 +135,7 @@
       "hairColor": "brown",
       "eyeColor": "blue",
       "shirtColor": "white",
-      "facialExpression": "",
+      "facial expression": "expressionless",
       "miscellaneous": ["have a hat", "wear glasses"]
     },
     {
@@ -144,7 +144,7 @@
       "hairColor": "blonde",
       "eyeColor": "black",
       "shirtColor": "blue",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["have a hat"]
     },
     {
@@ -153,7 +153,7 @@
       "hairColor": "blonde",
       "eyeColor": "blue",
       "shirtColor": "red",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["wear glasses", "have a hat"]
     },
     {
@@ -162,7 +162,7 @@
       "hairColor": "blonde",
       "eyeColor": "brown",
       "shirtColor": "green",
-      "facialExpression": "",
+      "facial expression": "expressionless",
       "miscellaneous": []
     },
     {
@@ -171,7 +171,7 @@
       "hairColor": "black",
       "eyeColor": "brown",
       "shirtColor": "yellow",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["have a beard"]
     },
     {
@@ -180,7 +180,7 @@
       "hairColor": "red",
       "eyeColor": "blue",
       "shirtColor": "green",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": []
     },
     {
@@ -189,7 +189,7 @@
       "hairColor": "red",
       "eyeColor": "black",
       "shirtColor": "yellow",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": []
     },
     {
@@ -198,7 +198,7 @@
       "hairColor": "black",
       "eyeColor": "brown",
       "shirtColor": "red",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["have a beard", "wear glasses"]
     },
     {
@@ -207,7 +207,7 @@
       "hairColor": "brown",
       "eyeColor": "blue",
       "shirtColor": "white",
-      "facialExpression": "",
+      "facial expression": "expressionless",
       "miscellaneous": ["have a hat", "wear glasses"]
     },
     {
@@ -216,7 +216,7 @@
       "hairColor": "blonde",
       "eyeColor": "black",
       "shirtColor": "blue",
-      "facialExpression": "smiling",
+      "facial expression": "smiling",
       "miscellaneous": ["have a hat"]
     }
   ]

@@ -5,12 +5,13 @@ import android.view.View;
 import android.widget.Button;
 
 import com.velen.guesswho.R;
-import com.velen.guesswho.gameDialogs.AnswerDialog;
 import com.velen.guesswho.answer.AnswerGenerator;
+import com.velen.guesswho.gameDialogs.AnswerDialog;
+import com.velen.guesswho.gameDialogs.QuestionDialog;
 import com.velen.guesswho.gameDialogs.SwitchableDialogDisplayer;
+import com.velen.guesswho.gameStrings.GameStringLiterals;
 import com.velen.guesswho.player.Player;
 import com.velen.guesswho.question.Question;
-import com.velen.guesswho.gameDialogs.QuestionDialog;
 
 public class AnswerAnnouncementState implements GameState {
 
@@ -53,7 +54,7 @@ public class AnswerAnnouncementState implements GameState {
         QuestionDialog questionDialog = new QuestionDialog(displayer, game.getTurnManager().getCurrentPlayer());
         View view = questionDialog.openDialog(question.getQuestionToDisplay());
         Button answerButton = (Button) view.findViewById(R.id.okAnswerButton);
-        answerButton.setText(R.string.ANSWER);
+        answerButton.setText(GameStringLiterals.ANSWER);
         answerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +62,7 @@ public class AnswerAnnouncementState implements GameState {
                 AnswerGenerator generator = new AnswerGenerator();
                 View view = answerDialog.openDialog(generator.generateLongAnswer(question, game.getTurnManager().getNextPlayer().getChosenCharacter()));
                 Button okButton = (Button) view.findViewById(R.id.okAnswerButton);
-                okButton.setText(R.string.FLIP);
+                okButton.setText(GameStringLiterals.FLIP);
                 okButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

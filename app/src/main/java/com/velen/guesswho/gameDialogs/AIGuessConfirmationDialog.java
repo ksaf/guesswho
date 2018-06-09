@@ -13,6 +13,7 @@ import com.velen.guesswho.animations.AnimationEndListener;
 import com.velen.guesswho.animations.TypeWriter;
 import com.velen.guesswho.characters.Character;
 import com.velen.guesswho.gameStates.Game;
+import com.velen.guesswho.gameStrings.GameStringLiterals;
 import com.velen.guesswho.player.Player;
 
 public class AIGuessConfirmationDialog implements AnimationEndListener {
@@ -61,7 +62,7 @@ public class AIGuessConfirmationDialog implements AnimationEndListener {
     @Override
     public void atAnimationEnd() {
         if(isGuessCorrect()) {
-            multiButton.setText(R.string.YES);
+            multiButton.setText(GameStringLiterals.YES);
             multiButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -71,7 +72,7 @@ public class AIGuessConfirmationDialog implements AnimationEndListener {
                 }
             });
         } else {
-            multiButton.setText(R.string.NO);
+            multiButton.setText(GameStringLiterals.NO);
             multiButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

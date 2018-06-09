@@ -12,6 +12,11 @@ public class GameStringLiterals {
 
     /* FEATURES*/
     public final static String NAME = "name";
+    public final static String GENDER = "gender";
+    public final static String HAIR_COLOR = "hairColor";
+    public final static String EYE_COLOR = "eyeColor";
+    public final static String SHIRT_COLOR = "shirtColor";
+    public final static String FACIAL_EXPRESSION = "facial expression";
     public final static String MISCELLANEOUS = "miscellaneous";
 
     /* PATHS*/

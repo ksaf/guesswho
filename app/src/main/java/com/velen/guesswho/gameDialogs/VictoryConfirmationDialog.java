@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.velen.guesswho.R;
 import com.velen.guesswho.gameStates.Game;
+import com.velen.guesswho.gameStrings.GameStringLiterals;
 import com.velen.guesswho.player.AIPlayer;
 import com.velen.guesswho.player.Player;
 import com.velen.guesswho.startup.StartupActivity;
@@ -56,18 +57,18 @@ public class VictoryConfirmationDialog {
         Button exitBtn = (Button) view.findViewById(R.id.mainMenuBtn);
 
 
-        blueCharacterTxt.setText(bluePlayer.getColor().toUpperCase() + activity.getString(R.string.PLAYERS_CHARACTER));
+        blueCharacterTxt.setText(bluePlayer.getColor().toUpperCase() + GameStringLiterals.PLAYERS_CHARACTER);
         if(playerWhoWon instanceof AIPlayer) {
-            whoWonTxt.setText(R.string.YOU_LOST);
-            blueCharacterTxt.setText(R.string.YOUR_CHARACTER);
+            whoWonTxt.setText(GameStringLiterals.YOU_LOST);
+            blueCharacterTxt.setText(GameStringLiterals.YOUR_CHARACTER);
         } else if(isVsAi()) {
-            whoWonTxt.setText(R.string.YOU_WON);
+            whoWonTxt.setText(GameStringLiterals.YOU_WON);
         }
-        whoWonTxt.setText(playerWhoWon.getColor().toUpperCase() + activity.getString(R.string.PLAYER_WON));
-        redCharacterTxt.setText(redPlayer.getColor().toUpperCase() + activity.getString(R.string.PLAYERS_CHARACTER));
+        whoWonTxt.setText(playerWhoWon.getColor().toUpperCase() + GameStringLiterals.PLAYER_WON);
+        redCharacterTxt.setText(redPlayer.getColor().toUpperCase() + GameStringLiterals.PLAYERS_CHARACTER);
         blueImg.setImageDrawable(bluePlayer.getChosenCharacter().getDrawable());
         redImg.setImageDrawable(redPlayer.getChosenCharacter().getDrawable());
-        playAgainBtn.setText(R.string.PLAY_AGAIN);
+        playAgainBtn.setText(GameStringLiterals.PLAY_AGAIN);
         playAgainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +76,7 @@ public class VictoryConfirmationDialog {
                 game.flipCoin();
             }
         });
-        exitBtn.setText(R.string.EXIT_GAME);
+        exitBtn.setText(GameStringLiterals.EXIT_GAME);
         exitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
