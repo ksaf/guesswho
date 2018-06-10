@@ -77,7 +77,7 @@ public class AskQuestionClickListener implements View.OnClickListener{
             View eachItemView = activity.getLayoutInflater().inflate(R.layout.ask_question_menu_each_item,null);
 
             ImageView img = (ImageView) eachItemView.findViewById(R.id.ask_question_menu_item_image);
-            img.setImageDrawable(AssetLoader.loadDrawableFromAssets(activity, QUESTION_ICONS_PATH + (type + PNG_EXTENSION).toLowerCase()));
+            img.setImageDrawable(AssetLoader.loadDrawableFromAssets(activity, QUESTION_ICONS_PATH + (type.toLowerCase().replace(" ", "") + PNG_EXTENSION).toLowerCase()));
 
             Button btn = (Button) eachItemView.findViewById(R.id.ask_question_menu_item_text);
             btn.setText(type);
