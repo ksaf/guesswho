@@ -38,18 +38,7 @@ public class Character {
      * @return True if the character has that feature, otherwise false.
      */
     public boolean hasFeature(String featureType, String featureChoice) {
-        boolean hasFeature = false;
-        String[] allTypes = characterFeatures.getContainedTypes().toArray(new String[characterFeatures.getContainedTypes().size()]);
-        for(String currentType : allTypes) {
-            String nextFeature = characterFeatures.getNextFeatureFor(featureType);
-            if(nextFeature != null) {
-                hasFeature = nextFeature.equals(featureChoice);
-                if(hasFeature) {
-                    return hasFeature;
-                }
-            }
-        }
-        return hasFeature;
+        return characterFeatures.hasFeature(featureType, featureChoice);
     }
 
     /**

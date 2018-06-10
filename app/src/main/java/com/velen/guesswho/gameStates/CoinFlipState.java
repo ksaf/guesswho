@@ -10,12 +10,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.velen.guesswho.R;
-import com.velen.guesswho.gameDialogs.SwitchableDialogDisplayer;
 import com.velen.guesswho.assetLoader.AssetLoader;
+import com.velen.guesswho.gameDialogs.SwitchableDialogDisplayer;
+import com.velen.guesswho.gameStrings.GameStringLiterals;
 import com.velen.guesswho.playScreen.PlayScreenActivity;
 import com.velen.guesswho.player.AIPlayer;
 import com.velen.guesswho.player.Player;
 import com.velen.guesswho.question.Question;
+
+import static com.velen.guesswho.gameStrings.GameStringLiterals.COINUP_FILE;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.COIN_PATH;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.PLAYS;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.PNG_EXTENSION;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.YOU_PLAY;
 
 public class CoinFlipState implements GameState {
 
@@ -34,11 +41,11 @@ public class CoinFlipState implements GameState {
         final SwitchableDialogDisplayer dialogDisplayer = new SwitchableDialogDisplayer(playScreenActivity);
         View view = dialogDisplayer.showPopupLayout(R.layout.coin_flip_window, false);
         final TextView whoPlays = (TextView) view.findViewById(R.id.whoPlays);
-        whoPlays.setText("Tap the coin!");
+        whoPlays.setText(GameStringLiterals.TAP_THE_COIN);
         final Button okButton = (Button) view.findViewById(R.id.endCoinFlipButton);
         okButton.setVisibility(View.INVISIBLE);
         final ImageView coinImage = (ImageView) view.findViewById(R.id.coinImage);
-        coinImage.setImageDrawable(AssetLoader.loadDrawableFromAssets(playScreenActivity, "coin/coinup.png"));
+        coinImage.setImageDrawable(AssetLoader.loadDrawableFromAssets(playScreenActivity, COIN_PATH + COINUP_FILE + PNG_EXTENSION));
         coinImage.setClickable(true);
 
         coinImage.setOnClickListener(new View.OnClickListener() {
@@ -56,10 +63,10 @@ public class CoinFlipState implements GameState {
                     public void onAnimationEnd(Animation animation) {
                         activity.getPlayScreenUI().switchCoinFlipBackgroundOff(game.getTurnManager().getCurrentPlayer());
                         if(winFlip == 0) {
-                            String youOrBlue = game.getTurnManager().isVsAI()? "You play " : currentPlayer.getColor()+ " plays ";
-                            whoPlays.setText(youOrBlue + "first!");
+                            String youOrBlue = game.getTurnManager().isVsAI()? YOU_PLAY : currentPlayer.getColor()+ PLAYS;
+                            whoPlays.setText(youOrBlue + GameStringLiterals.FIRST);
                         } else {
-                            whoPlays.setText(currentPlayer.getColor().toUpperCase() + " plays first!");
+                            whoPlays.setText(currentPlayer.getColor().toUpperCase() + GameStringLiterals.PLAYS_FIRST);
                         }
                         okButton.setVisibility(View.VISIBLE);
                     }

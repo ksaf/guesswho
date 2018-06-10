@@ -2,7 +2,7 @@ package com.velen.guesswho.question;
 
 import com.velen.guesswho.characters.CharacterGroup;
 import com.velen.guesswho.features.CharacterFeatures;
-import com.velen.guesswho.features.FeaturesPool;
+import com.velen.guesswho.features.GroupFeaturesPool;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -17,14 +17,14 @@ import java.util.Arrays;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
-public class AIQuestionGeneratorTest {
+public class AIQuestionGeneratorImplTest {
 
     private final int NUMBER_OF_CHARACTERS = 4;
 
     @Mock
     private CharacterGroup mockGroup;
     @Mock
-    private FeaturesPool mockPool;
+    private GroupFeaturesPool mockPool;
     @Mock
     private CharacterFeatures mockFeatures;
 
@@ -39,7 +39,7 @@ public class AIQuestionGeneratorTest {
 
     @Test
     public void shouldGenerateTheBestQuestion() {
-        AIQuestionGenerator generator = new AIQuestionGenerator();
+        AIQuestionGeneratorImpl generator = new AIQuestionGeneratorImpl();
         Question q = generator.generateQuestion(mockGroup, 100);
         String expectedQuestion = "Are your character's eyes black?";
         String actualQuestion = q.getQuestionToDisplay();

@@ -1,23 +1,9 @@
 package com.velen.guesswho.question;
 
 import com.velen.guesswho.characters.CharacterGroup;
-import com.velen.guesswho.features.FeaturesPool;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
-/**
- * This class contains all the logic for a random AI question to be generated.
- * The question can be the best possible or worse, depending on the difficulty.
- */
-public class AIQuestionGenerator {
-
-    private int difficulty;
-    private double bestQuestionPower = 2;
-    private String bestQuestionType;
-    private String bestQuestionChoice;
+/** An Interface to be implemented by the class that will provide the questions the AI will ask.*/
+public interface AIQuestionGenerator {
 
     /**
      * Generates an AI {@link Question} to be asked against a player. How powerful the question
@@ -27,42 +13,5 @@ public class AIQuestionGenerator {
      *                   question, should never be 0 or lower.
      * @return The generated {@link Question}.
      */
-    public Question generateQuestion(CharacterGroup againstGroup, int difficulty) {
-        this.difficulty = difficulty > 49? difficulty : 50;
-        FeaturesPool pool = againstGroup.getAllAvailableFeaturesForGroup();
-        List<String> allTypes = pool.getAllAvailableFeatureTypes();
-        allTypes = shuffle(allTypes);
-        for(String currentType : allTypes) {
-            List<String> allFeaturesForType = pool.getAllAvailableFeaturesIncludingDuplicatesFor(currentType);
-            allFeaturesForType = shuffle(allFeaturesForType);
-            for(String currentFeatureChoice : allFeaturesForType) {
-                int occurrences = Collections.frequency(allFeaturesForType, currentFeatureChoice);
-                double questionPower = (double)occurrences / (double)againstGroup.getGroupSize();
-                if(isBetterThan(questionPower, bestQuestionPower)) {
-                    bestQuestionPower = questionPower;
-                    bestQuestionType = currentType;
-                    bestQuestionChoice = currentFeatureChoice;
-                }
-            }
-        }
-        return QuestionBuilder.getInstance().getQuestion(bestQuestionType, bestQuestionChoice);
-    }
-
-    private List<String> shuffle(List<String> list) {
-        List<String> shuffledList = new ArrayList<>(list);
-        Collections.shuffle(shuffledList);
-        return shuffledList;
-    }
-
-    private boolean shouldGiveBestPossibleQuestion() {
-        Random r = new Random();
-        boolean shouldGiveBestQuestion = false;
-        if(r.nextInt(100)+1 < difficulty){shouldGiveBestQuestion=true;}
-        return shouldGiveBestQuestion;
-    }
-
-    /* Remaining number of occurrences / remaining number of characters must be as close to 0.5 as possible. **/
-    private boolean isBetterThan(double first, double second) {
-        return (Math.abs(first - 0.5) < Math.abs(second - 0.5)) && shouldGiveBestPossibleQuestion();
-    }
+    Question generateQuestion(CharacterGroup againstGroup, int difficulty);
 }

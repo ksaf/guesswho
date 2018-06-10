@@ -12,6 +12,8 @@ import com.velen.guesswho.characters.Character;
 import com.velen.guesswho.gameDialogs.GuessConfirmationDialog;
 import com.velen.guesswho.player.Player;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.DO_YOU_WANT_TO_GUESS_THIS_CHARACTER;
+
 public class GuessCharacterClickListener implements View.OnClickListener, AnimatedViewHandler{
 
     private View convertView;
@@ -36,6 +38,6 @@ public class GuessCharacterClickListener implements View.OnClickListener, Animat
     public void onAnimationEnd() {
         final SwitchableDialogDisplayer displayer = new SwitchableDialogDisplayer(context);
         GuessConfirmationDialog dialog = new GuessConfirmationDialog(displayer, context, player, character);
-        dialog.openDialog("Do you want to guess this character?");
+        dialog.openDialog(DO_YOU_WANT_TO_GUESS_THIS_CHARACTER);
     }
 }

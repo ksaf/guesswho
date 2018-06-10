@@ -2,7 +2,7 @@ package com.velen.guesswho.characters;
 
 import android.graphics.drawable.Drawable;
 
-import com.velen.guesswho.features.FeaturesPool;
+import com.velen.guesswho.features.GroupFeaturesPool;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,7 +12,7 @@ import java.util.List;
 public class CharacterGroup {
 
     private List<Character> characters = new ArrayList<>();
-    private FeaturesPool featuresPool = new FeaturesPool();
+    private GroupFeaturesPool groupFeaturesPool = new GroupFeaturesPool();
     private Drawable groupLeader;
     private Drawable groupBackGround;
     private String groupName;
@@ -29,7 +29,7 @@ public class CharacterGroup {
      * @return True if the character was added, otherwise false.
      */
     public boolean addCharacter(Character character) {
-        featuresPool.addToPool(character.getFeatures());
+        groupFeaturesPool.addToGroupPool(character.getFeatures());
         return characters.add(character);
     }
 
@@ -39,7 +39,7 @@ public class CharacterGroup {
      * @return True if the character was removed, otherwise false.
      */
     public boolean removeCharacter(Character character) {
-        featuresPool.removeFromPool(character.getFeatures());
+        groupFeaturesPool.removeFromPool(character.getFeatures());
         return characters.remove(character);
     }
 
@@ -63,8 +63,8 @@ public class CharacterGroup {
     /**
      * @return A Class containing all the available features of all characters in this group.
      */
-    public FeaturesPool getAllAvailableFeaturesForGroup() {
-        return featuresPool;
+    public GroupFeaturesPool getAllAvailableFeaturesForGroup() {
+        return groupFeaturesPool;
     }
 
     /**

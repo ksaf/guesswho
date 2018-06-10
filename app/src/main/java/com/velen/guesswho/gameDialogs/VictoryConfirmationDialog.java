@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.velen.guesswho.R;
 import com.velen.guesswho.gameStates.Game;
+import com.velen.guesswho.gameStrings.GameStringLiterals;
 import com.velen.guesswho.player.AIPlayer;
 import com.velen.guesswho.player.Player;
 import com.velen.guesswho.startup.StartupActivity;
@@ -30,7 +31,7 @@ public class VictoryConfirmationDialog {
         this.displayer = displayer;
         this.activity = (AppCompatActivity) context;
         this.playerWhoWon = playerWhoWon;
-        if(game.getTurnManager().getCurrentPlayer().getColor().toLowerCase().equals("blue")) {
+        if(game.getTurnManager().getCurrentPlayer().getColor().toLowerCase().equals(Player.BLUE)) {
             bluePlayer = game.getTurnManager().getCurrentPlayer();
             redPlayer = game.getTurnManager().getNextPlayer();
         } else {
@@ -56,18 +57,18 @@ public class VictoryConfirmationDialog {
         Button exitBtn = (Button) view.findViewById(R.id.mainMenuBtn);
 
 
-        blueCharacterTxt.setText(bluePlayer.getColor().toUpperCase() + " player's character :");
+        blueCharacterTxt.setText(bluePlayer.getColor().toUpperCase() + GameStringLiterals.PLAYERS_CHARACTER);
         if(playerWhoWon instanceof AIPlayer) {
-            whoWonTxt.setText("You lost!");
-            blueCharacterTxt.setText("Your character:");
+            whoWonTxt.setText(GameStringLiterals.YOU_LOST);
+            blueCharacterTxt.setText(GameStringLiterals.YOUR_CHARACTER);
         } else if(isVsAi()) {
-            whoWonTxt.setText("You Won!");
+            whoWonTxt.setText(GameStringLiterals.YOU_WON);
         }
-        whoWonTxt.setText(playerWhoWon.getColor().toUpperCase() + " player won!");
-        redCharacterTxt.setText(redPlayer.getColor().toUpperCase() + " player's character :");
+        whoWonTxt.setText(playerWhoWon.getColor().toUpperCase() + GameStringLiterals.PLAYER_WON);
+        redCharacterTxt.setText(redPlayer.getColor().toUpperCase() + GameStringLiterals.PLAYERS_CHARACTER);
         blueImg.setImageDrawable(bluePlayer.getChosenCharacter().getDrawable());
         redImg.setImageDrawable(redPlayer.getChosenCharacter().getDrawable());
-        playAgainBtn.setText("Play Again!");
+        playAgainBtn.setText(GameStringLiterals.PLAY_AGAIN);
         playAgainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +76,7 @@ public class VictoryConfirmationDialog {
                 game.flipCoin();
             }
         });
-        exitBtn.setText("Exit Game");
+        exitBtn.setText(GameStringLiterals.EXIT_GAME);
         exitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

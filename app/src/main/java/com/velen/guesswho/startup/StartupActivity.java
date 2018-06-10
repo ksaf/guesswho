@@ -12,6 +12,10 @@ import android.widget.TextView;
 import com.velen.guesswho.R;
 import com.velen.guesswho.playScreen.PlayScreenActivity;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.CARICATURE_TYPEFACE_FILE;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.TYPEFACES_PATH;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.TYPEFACE_EXTENSION;
+
 /**
  * This activity builds the first screen you see when you open the app, and a set amount of
  * time later navigates you to the main menu.
@@ -19,7 +23,7 @@ import com.velen.guesswho.playScreen.PlayScreenActivity;
 public class StartupActivity extends AppCompatActivity {
 
     private static final int LOGO_ID = R.id.logoTV;
-    private static final String LOGO_TYPEFACE = "typefaces/caricature2.ttf";
+    private static final String LOGO_TYPEFACE = TYPEFACES_PATH + CARICATURE_TYPEFACE_FILE + TYPEFACE_EXTENSION;
     private static final int LOGO_TXT_SIZE = 100;
     private static final String LOGO_COLOR = "#FF7F50";
     private static final int LOADING_TIME = 2000;

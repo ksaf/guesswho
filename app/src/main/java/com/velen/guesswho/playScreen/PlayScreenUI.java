@@ -22,6 +22,9 @@ import com.velen.guesswho.viewResizer.ViewResizer;
 
 import java.util.List;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.CHARACTER_GROUPS_PATH;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.FLIPPED_FILE;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.PNG_EXTENSION;
 import static com.velen.guesswho.viewResizer.ViewResizer.SELECTED_CHAR_HEIGHT;
 import static com.velen.guesswho.viewResizer.ViewResizer.SELECTED_CHAR_WIDTH;
 import static com.velen.guesswho.viewResizer.ViewResizer.resizeToDeviceDimensions;
@@ -88,7 +91,7 @@ public class PlayScreenUI {
         resizeToDeviceDimensions(playScreenActivity, chosenCharacterPortrait, SELECTED_CHAR_HEIGHT, SELECTED_CHAR_WIDTH);
         resizeToDeviceDimensions(playScreenActivity, chosenCharacterLayout, SELECTED_CHAR_HEIGHT, SELECTED_CHAR_WIDTH);
         if(character == null) {
-            chosenCharacterPortrait.setImageDrawable(AssetLoader.loadDrawableFromAssets(playScreenActivity, "characterGroups/flipped.png"));
+            chosenCharacterPortrait.setImageDrawable(AssetLoader.loadDrawableFromAssets(playScreenActivity, CHARACTER_GROUPS_PATH + FLIPPED_FILE + PNG_EXTENSION));
         } else {
             chosenCharacterPortrait.setImageDrawable(character.getDrawable());
         }

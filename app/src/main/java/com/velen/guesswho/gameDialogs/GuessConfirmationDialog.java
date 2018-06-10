@@ -15,6 +15,11 @@ import com.velen.guesswho.characters.Character;
 import com.velen.guesswho.gameStates.Game;
 import com.velen.guesswho.player.Player;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.NEXT_TURN;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.NO_THIS_IS_NOT_MY_CHARACTER;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.VICTORY;
+import static com.velen.guesswho.gameStrings.GameStringLiterals.YES_THIS_IS_MY_CHARACTER;
+
 public class GuessConfirmationDialog implements AnimationEndListener{
 
     private SwitchableDialogDisplayer displayer;
@@ -68,9 +73,9 @@ public class GuessConfirmationDialog implements AnimationEndListener{
                 tw.resetText();
                 tw.setActionAfterTyping(GuessConfirmationDialog.this);
                 if(isGuessCorrect()) {
-                    tw.animateText("Yes, this is my character!");
+                    tw.animateText(YES_THIS_IS_MY_CHARACTER);
                 } else {
-                    tw.animateText("No, this is not my character.");
+                    tw.animateText(NO_THIS_IS_NOT_MY_CHARACTER);
                 }
             }
         });
@@ -79,11 +84,11 @@ public class GuessConfirmationDialog implements AnimationEndListener{
     @Override
     public void atAnimationEnd() {
         if(isGuessCorrect()) {
-            victoryOrNextButton.setText("Victory!");
+            victoryOrNextButton.setText(VICTORY);
             victoryOrNextButton.setVisibility(View.VISIBLE);
             victoryOrNextButton.setOnClickListener(new VictoryClickListener());
         } else {
-            victoryOrNextButton.setText("Next turn");
+            victoryOrNextButton.setText(NEXT_TURN);
             victoryOrNextButton.setVisibility(View.VISIBLE);
             victoryOrNextButton.setOnClickListener(new NotCorrectClickListener());
         }

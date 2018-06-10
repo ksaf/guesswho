@@ -31,4 +31,8 @@ public class CharacterFeature {
     public String actual() {
         return feature;
     }
+
+    public boolean is(String featureType, String feature) {
+        return (featureType.equals(this.featureType) && feature.equals(this.feature));
+    }
 }

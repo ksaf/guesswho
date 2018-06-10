@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.velen.guesswho.gameDialogs.SwitchableDialogDisplayer;
 import com.velen.guesswho.characters.Character;
 import com.velen.guesswho.gameDialogs.AIGuessConfirmationDialog;
+import com.velen.guesswho.gameStrings.GameStringLiterals;
 import com.velen.guesswho.player.Player;
 import com.velen.guesswho.question.Question;
 
@@ -27,7 +28,7 @@ public class AIGuessingState implements GameState {
         int random = rn.nextInt(characters.size());
         final SwitchableDialogDisplayer displayer = new SwitchableDialogDisplayer(playScreenActivity);
         AIGuessConfirmationDialog dialog = new AIGuessConfirmationDialog(displayer, playScreenActivity, player, characters.get(random));
-        dialog.openDialog("Is this your character?");
+        dialog.openDialog(GameStringLiterals.IS_THIS_YOUR_CHARACTER);
     }
 
     @Override

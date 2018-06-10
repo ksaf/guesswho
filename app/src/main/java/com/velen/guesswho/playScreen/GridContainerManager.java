@@ -8,6 +8,7 @@ import android.view.View;
 import com.velen.guesswho.R;
 import com.velen.guesswho.assetLoader.AssetLoader;
 
+import static com.velen.guesswho.gameStrings.GameStringLiterals.*;
 import static com.velen.guesswho.viewResizer.ViewResizer.BOT_CHAR_HEIGHT;
 import static com.velen.guesswho.viewResizer.ViewResizer.BOT_CHAR_WIDTH;
 import static com.velen.guesswho.viewResizer.ViewResizer.BOT_MINIATURE_CHAR_HEIGHT;
@@ -37,14 +38,14 @@ public class GridContainerManager {
 
     public void createGridContainer() {
         View gridContainer = activity.findViewById(R.id.gridContainer);
-        gridContainer.setBackgroundDrawable(AssetLoader.loadDrawableFromAssets(activity, "characterGroups/contBg.png"));
+        gridContainer.setBackgroundDrawable(AssetLoader.loadDrawableFromAssets(activity, CHARACTER_GROUPS_PATH + BOARD_FILE + PNG_EXTENSION));
         resizeRowGuidelines(gridContainer, getNormalGridTopConstraintPercentage(), getNormalGridMidConstraintPercentage());
         resizeGridContainer(gridContainer);
     }
 
     public void createMiniatureGridContainer() {
         View gridContainer = activity.findViewById(R.id.miniatureGrid);
-        gridContainer.setBackgroundDrawable(AssetLoader.loadDrawableFromAssets(activity, "characterGroups/contBg.png"));
+        gridContainer.setBackgroundDrawable(AssetLoader.loadDrawableFromAssets(activity, CHARACTER_GROUPS_PATH + BOARD_FILE + PNG_EXTENSION));
         resizeRowGuidelines(gridContainer, getMiniGridTopConstraintPercentage(), getMiniGridMidConstraintPercentage());
         resizeMiniatureGridContainer(gridContainer);
     }

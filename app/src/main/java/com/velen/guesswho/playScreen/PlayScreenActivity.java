@@ -28,8 +28,8 @@ public class PlayScreenActivity extends AppCompatActivity{
         setContentView(R.layout.play_screen);
 
         CharacterGroupBuilder groupBuilder = new CharacterGroupBuilder(getApplicationContext());
-        CharacterGroup characterGroup1 = groupBuilder.getCharactersInXml(R.xml.test_character_pool);
-        CharacterGroup characterGroup2 = groupBuilder.getCharactersInXml(R.xml.test_character_pool2);
+        CharacterGroup characterGroup1 = groupBuilder.getCharactersInJSON("test_char_pool.json");
+        CharacterGroup characterGroup2 = groupBuilder.getCharactersInJSON("test_char_pool2.json");
 
         Player player1 = new Player(characterGroup1, this, Player.BLUE);
         Player player2 = new AIPlayer(characterGroup2, this, Player.RED);
